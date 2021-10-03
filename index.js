@@ -50,7 +50,7 @@
 // title.style.color = "gold";
 // console.dir(document)
 
-const txt = document.querySelector(".txt");
+
 
 function handleResize(){
   console.log("I've been resized")
@@ -58,17 +58,27 @@ function handleResize(){
 
 window.addEventListener("resize",handleResize);
 
-function handleClick(){
-  // @ts-ignore
-  txt.style.color = 'red';
-}
-// @ts-ignore
-txt.addEventListener("click", handleClick);
+const txt = document.querySelector(".txt");
+const BASE_COLOR = "red";
+const OTHER_COLOR = "blue";
 
-if(txt === null){
-  alert('oops');
-}else{
-  function handleClick(){
+function handleClick(){
+  //@ts-ignore
+  const currnetColor = txt.style.color;
+  if(currnetColor === BASE_COLOR){
+    //@ts-ignore
+    txt.style.color = OTHER_COLOR;
+  }else{
+    //@ts-ignore
+    txt.style.color = BASE_COLOR;
+  }
+}
+// // @ts-ignore
+// txt.addEventListener("click", handleClick);
+
+function init(){
   // @ts-ignore
-  txt.style.color = 'red';
-}}
+  txt.style.color = BASE_COLOR;
+  txt?.addEventListener("mouseenter",handleClick);
+}
+init();
