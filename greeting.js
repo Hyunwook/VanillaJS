@@ -1,15 +1,20 @@
 
-const form = document.querySelector(".js.form"),
-  input = form?.querySelector("input");
-  greeting = document.querySelector(".js-greeting");
+const form = document.querySelector(".js-form"),
+  input = form && form.querySelector("input"); //옵셔널체이닝ES11 =form?.
+  let greeting = document.querySelector(".js-greetings");
 
 const USER_LS = "currentUser",
     SHOWING_CN = "showing";
 
+function saveName(text){
+  localStorage.setItem(USER_LS, text);
+}
+
 function handleSubmit(event){
   event.preventDefault();
   const currentValue = input?.value;
-  console.log(currentValue)
+  paintGreeting(currentValue);
+  saveName(currentValue);
 }
 
 function askForName(){
@@ -29,7 +34,7 @@ function loadName(){
   const currentUser = localStorage.getItem(USER_LS);
   if(currentUser === null){
     //she is not
-    askForName()
+    askForName();
   }else{
     //she is
     paintGreeting(currentUser);
