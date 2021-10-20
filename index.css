@@ -1,6 +1,9 @@
 body {
-  background-color: #ecf0f1;
-  color: #34495e;
+  height: 100vh;
+  background-image: url('img/santo.jpg');
+  background-repeat : no-repeat;
+  background-size : cover;
+
 }
 
 .btn {
@@ -12,7 +15,7 @@ h1 {
 }
 
 .clicked {
-  color: #34495e;
+  color: white;
 }
 
 .color {
@@ -26,4 +29,32 @@ h1 {
 
 .showing {
   display: block;
+}
+.js-clock h1{
+  color: white;
+  font-size: 150px;
+  margin-top: 250px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.js-greetings{
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.js-toDoForm{
+  text-align: center;
+}
+.js-toDoForm input{
+  text-align: center;
+}
+.js-toDoList{
+  text-align: center;
+  list-style: none;
+}
+.js-toDoList li{
+  padding: 5px;
+  color: white;
+  font-size: 20px;
 }
